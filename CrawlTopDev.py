@@ -1,4 +1,5 @@
 from datetime import datetime
+from json import load
 from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.by import By
@@ -7,10 +8,15 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import csv
+from dotenv import load_dotenv
+import os
 
+
+
+load_dotenv()
 # credentials
-password = 'Quan8803@'
-username = 'nguyenquan2388'
+password = os.getenv('GITHUB_PASSWORD')
+username = os.getenv('GITHUB_USERNAME')
 
 # init ChromeDriver with options
 chrome_options = Options()
